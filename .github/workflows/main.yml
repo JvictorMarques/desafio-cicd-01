@@ -12,7 +12,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/check-version.yml
+      - uses: ./.github/actions/check-version
       - name: Building
         working-directory: ./src
         run: dotnet build Review-Filmes.sln
