@@ -8,5 +8,4 @@ jobs:
         name: Teste de Unidade
         runs-on: ubuntu-latest
         steps:
-            uses: ./.github/actions/setup-dotnet
-            - name: 
+            - uses: ./.github/workflows/check-version.yml
