@@ -40,5 +40,5 @@ jobs:
           context: ./src
           file: src/Review-Filmes.Web/Dockerfile
           tags: |
-            fabricioveronez/projeto-devops-pro:latest
-            fabricioveronez/projeto-devops-pro:${{ github.run_number }}
+            jvictorsm/projeto-teste:latest
+            jvictorsm/projeto-teste:${{ github.run_number }}
