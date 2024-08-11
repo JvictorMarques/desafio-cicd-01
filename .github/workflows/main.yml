@@ -20,3 +20,24 @@ jobs:
       - name: Building
         working-directory: ./src
         run: dotnet build Review-Filmes.sln
+
+  release:
+    name: Criação de Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ./src
+          file: src/Review-Filmes.Web/Dockerfile
+          tags: |
+            fabricioveronez/projeto-devops-pro:latest
+            fabricioveronez/projeto-devops-pro:${{ github.run_number }}
