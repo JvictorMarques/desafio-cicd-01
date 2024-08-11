@@ -12,11 +12,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: "8.0.300"
+        uses: .github/actions/check_version
       - name: Building
         working-directory: ./src
         run: dotnet build Review-Filmes.sln
