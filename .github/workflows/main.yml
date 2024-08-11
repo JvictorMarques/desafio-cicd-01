@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup .NET
-        uses: .github/actions/check_version
+        uses: ./.github/actions/check_version
       - name: Building
         working-directory: ./src
         run: dotnet build Review-Filmes.sln
