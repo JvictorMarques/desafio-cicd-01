@@ -24,6 +24,7 @@ jobs:
   release:
     name: Criação de Release
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
       - uses: actions/checkout@v4
       - name: Docker Login
