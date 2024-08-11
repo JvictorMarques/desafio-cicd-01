@@ -1,9 +1,15 @@
 name: Checar a versão do .NET
 
+on:
+    workflow_dispatch:
+
 jobs:
-    name: Check
-    steps:
+    check:
+        name: Check .NET Version
+        runs-on: ubuntu-latest
+        steps:
         - uses: actions/checkout@v4
+      
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with:
