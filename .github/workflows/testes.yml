@@ -1,0 +1,12 @@
+name: Execução de Testes
+
+on:
+    workflow_call:
+    
+jobs:
+    unity-test:
+        name: Teste de Unidade
+        runs-on: ubuntu-latest
+        steps:
+            uses: ./.github/actions/setup-dotnet
+            - name: 
