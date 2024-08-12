@@ -13,3 +13,6 @@ jobs:
               uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: "8.0.300"
+            - name: Execução do Teste de Unidade
+              working-directory: ./src
+              run: src/Review-Filmes.Test.Unit/Review-Filmes.Test.Unit.csproj
