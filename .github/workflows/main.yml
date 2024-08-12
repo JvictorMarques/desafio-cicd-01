@@ -21,6 +21,10 @@ jobs:
         working-directory: ./src
         run: dotnet build Review-Filmes.sln
 
+  testes:
+    needs: [build]
+    uses: JvictorMarques/desafio-cicd-01/.github/workflows/testes.yml@main
+
   release:
     name: Criação de Release
     runs-on: ubuntu-latest
@@ -32,7 +36,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
-
+      
       - name: Build and push Docker images
         uses: docker/build-push-action@v6
         with:
