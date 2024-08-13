@@ -39,4 +39,4 @@ jobs:
               working-directory: ./src
               run: dotnet test ./Review-Filmes.Test.Integration/Review-Filmes.Test.Integration.csproj
               env:
-                ConnectionsStrings_DefaultConnection: "Host=localhost;Port 5432;Database=review-filmes;Username=review;Password=postgrespwd"
+                ConnectionStrings_DefaultConnection: "Host=localhost;Port 5432;Database=review-filmes;Username=review;Password=postgrespwd"
